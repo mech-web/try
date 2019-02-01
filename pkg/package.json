@@ -1,0 +1,15 @@
+{
+  "name": "wasmtest",
+  "collaborators": [
+    "Corey Montella <cmontella@live.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "wasmtest_bg.wasm",
+    "wasmtest.js",
+    "wasmtest.d.ts"
+  ],
+  "module": "wasmtest.js",
+  "types": "wasmtest.d.ts",
+  "sideEffects": "false"
+}
