@@ -1,4 +1,4 @@
-import * as mech from "./wasmtest";
+import * as mech from "/wasmtest";
 
 mech.compile(`# Program
 
