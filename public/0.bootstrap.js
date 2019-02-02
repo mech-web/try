@@ -31,7 +31,7 @@ eval("\"use strict\";\n// Instantiate WebAssembly module\nvar wasmExports = __we
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var wasmtest__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! wasmtest */ \"../pkg/wasmtest.js\");\n\r\n\r\nwasmtest__WEBPACK_IMPORTED_MODULE_0__[\"compile\"](`# Program\r\n\r\n  block\r\n    x = 1:100\r\n    #ball = [|x y vx vy|\r\n              x x x  x]`);\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var wasmtest__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! wasmtest */ \"../pkg/wasmtest.js\");\n\r\n\r\nlet code = document.createElement(\"textarea\");\r\ncode.setAttribute(\"class\", \"code\");\r\ncode.setAttribute(\"id\", \"code\");\r\ncode.innerHTML =  \"# Program\";\r\n\r\nlet compile = document.createElement(\"button\");\r\ncompile.setAttribute(\"id\", \"compile\");\r\ncompile.innerHTML =  \"Compile\";\r\n\r\nlet container = document.createElement(\"div\");\r\ncontainer.setAttribute(\"class\",\"container\");\r\n\r\ncontainer.appendChild(code);\r\ncontainer.appendChild(compile);\r\n\r\ndocument.body.appendChild(container);\r\n\r\n\r\n\r\ndocument.getElementById(\"compile\").addEventListener(\"click\", function() {\r\n  let code = document.getElementById(\"code\");\r\n  wasmtest__WEBPACK_IMPORTED_MODULE_0__[\"compile\"](code.value);\r\n});\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ })
 
