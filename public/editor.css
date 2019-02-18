@@ -17,11 +17,11 @@ label:focus,
 
 @font-face {
   font-family: 'Fira';
-  src: url('./FiraMono-Regular.ttf');
+  src: url('../fonts/FiraMono-Regular.ttf');
 }
 @font-face {
   font-family: 'FiraBold';
-  src: url('./FiraMono-Bold.ttf');
+  src: url('../fonts/FiraMono-Bold.ttf');
 }
 /* --- General --- */
 
@@ -222,4 +222,10 @@ p a {
   font-size: 14px;
   line-height: 24px;
   color: #777;
+}
+
+.slider {
+  width: 1000px;
+  -webkit-appearance: none;
+  background: #d3d3d3;
 }
