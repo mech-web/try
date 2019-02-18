@@ -85,11 +85,20 @@
 /******/ 					"__widl_f_clear_rect_CanvasRenderingContext2D": function(p0i32,p1f64,p2f64,p3f64,p4f64) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_clear_rect_CanvasRenderingContext2D"](p0i32,p1f64,p2f64,p3f64,p4f64);
 /******/ 					},
+/******/ 					"__widl_f_create_element_Document": function(p0i32,p1i32,p2i32,p3i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_create_element_Document"](p0i32,p1i32,p2i32,p3i32);
+/******/ 					},
 /******/ 					"__widl_f_get_element_by_id_Document": function(p0i32,p1i32,p2i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_get_element_by_id_Document"](p0i32,p1i32,p2i32);
 /******/ 					},
 /******/ 					"__widl_f_body_Document": function(p0i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_body_Document"](p0i32);
+/******/ 					},
+/******/ 					"__widl_f_set_attribute_Element": function(p0i32,p1i32,p2i32,p3i32,p4i32,p5i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_set_attribute_Element"](p0i32,p1i32,p2i32,p3i32,p4i32,p5i32);
+/******/ 					},
+/******/ 					"__widl_f_set_inner_html_Element": function(p0i32,p1i32,p2i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_set_inner_html_Element"](p0i32,p1i32,p2i32);
 /******/ 					},
 /******/ 					"__widl_instanceof_HTMLCanvasElement": function(p0i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_instanceof_HTMLCanvasElement"](p0i32);
@@ -102,6 +111,9 @@
 /******/ 					},
 /******/ 					"__widl_f_height_HTMLCanvasElement": function(p0i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_height_HTMLCanvasElement"](p0i32);
+/******/ 					},
+/******/ 					"__widl_f_append_child_Node": function(p0i32,p1i32,p2i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_append_child_Node"](p0i32,p1i32,p2i32);
 /******/ 					},
 /******/ 					"__widl_f_document_Window": function(p0i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_document_Window"](p0i32);
@@ -120,6 +132,9 @@
 /******/ 					},
 /******/ 					"__wbindgen_throw": function(p0i32,p1i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_throw"](p0i32,p1i32);
+/******/ 					},
+/******/ 					"__wbindgen_rethrow": function(p0i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_rethrow"](p0i32);
 /******/ 					}
 /******/ 				}
 /******/ 			};
@@ -219,7 +234,7 @@
 /******/ 				promises.push(installedWasmModuleData);
 /******/ 			else {
 /******/ 				var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 				var req = fetch(__webpack_require__.p + "" + {"../pkg/mech_wasm_bg.wasm":"b8b1707b41005afa1f3d"}[wasmModuleId] + ".module.wasm");
+/******/ 				var req = fetch(__webpack_require__.p + "" + {"../pkg/mech_wasm_bg.wasm":"66a1c5304aec34f48c42"}[wasmModuleId] + ".module.wasm");
 /******/ 				var promise;
 /******/ 				if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 					promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
