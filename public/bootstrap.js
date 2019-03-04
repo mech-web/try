@@ -61,9 +61,6 @@
 /******/ 					"__wbindgen_string_new": function(p0i32,p1i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_string_new"](p0i32,p1i32);
 /******/ 					},
-/******/ 					"__widl_f_log_1_": function(p0i32) {
-/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_log_1_"](p0i32);
-/******/ 					},
 /******/ 					"__widl_instanceof_Window": function(p0i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_instanceof_Window"](p0i32);
 /******/ 					},
@@ -117,6 +114,9 @@
 /******/ 					},
 /******/ 					"__widl_f_document_Window": function(p0i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_document_Window"](p0i32);
+/******/ 					},
+/******/ 					"__widl_f_log_1_": function(p0i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_log_1_"](p0i32);
 /******/ 					},
 /******/ 					"__wbg_newnoargs_4b1bc9d06177648d": function(p0i32,p1i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbg_newnoargs_4b1bc9d06177648d"](p0i32,p1i32);
@@ -234,7 +234,7 @@
 /******/ 				promises.push(installedWasmModuleData);
 /******/ 			else {
 /******/ 				var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 				var req = fetch(__webpack_require__.p + "" + {"../pkg/mech_wasm_bg.wasm":"9caf744a8d88d6570d86"}[wasmModuleId] + ".module.wasm");
+/******/ 				var req = fetch(__webpack_require__.p + "" + {"../pkg/mech_wasm_bg.wasm":"ed5797176765cbab6711"}[wasmModuleId] + ".module.wasm");
 /******/ 				var promise;
 /******/ 				if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 					promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
