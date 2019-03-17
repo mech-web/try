@@ -64,11 +64,11 @@
 /******/ 					"__wbindgen_string_new": function(p0i32,p1i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_string_new"](p0i32,p1i32);
 /******/ 					},
-/******/ 					"__widl_instanceof_Window": function(p0i32) {
-/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_instanceof_Window"](p0i32);
-/******/ 					},
 /******/ 					"__widl_f_log_1_": function(p0i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_log_1_"](p0i32);
+/******/ 					},
+/******/ 					"__widl_instanceof_Window": function(p0i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_instanceof_Window"](p0i32);
 /******/ 					},
 /******/ 					"__widl_instanceof_CanvasRenderingContext2D": function(p0i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_instanceof_CanvasRenderingContext2D"](p0i32);
@@ -121,6 +121,9 @@
 /******/ 					"__widl_f_get_element_by_id_Document": function(p0i32,p1i32,p2i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_get_element_by_id_Document"](p0i32,p1i32,p2i32);
 /******/ 					},
+/******/ 					"__widl_f_get_elements_by_tag_name_Document": function(p0i32,p1i32,p2i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_get_elements_by_tag_name_Document"](p0i32,p1i32,p2i32);
+/******/ 					},
 /******/ 					"__widl_f_body_Document": function(p0i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_body_Document"](p0i32);
 /******/ 					},
@@ -150,6 +153,12 @@
 /******/ 					},
 /******/ 					"__widl_f_height_HTMLCanvasElement": function(p0i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_height_HTMLCanvasElement"](p0i32);
+/******/ 					},
+/******/ 					"__widl_f_get_with_index_HTMLCollection": function(p0i32,p1i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_get_with_index_HTMLCollection"](p0i32,p1i32);
+/******/ 					},
+/******/ 					"__widl_f_length_HTMLCollection": function(p0i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_length_HTMLCollection"](p0i32);
 /******/ 					},
 /******/ 					"__widl_f_set_oninput_HTMLElement": function(p0i32,p1i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_set_oninput_HTMLElement"](p0i32,p1i32);
@@ -214,11 +223,11 @@
 /******/ 					"__wbindgen_rethrow": function(p0i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_rethrow"](p0i32);
 /******/ 					},
-/******/ 					"__wbindgen_closure_wrapper190": function(p0i32,p1i32,p2i32) {
-/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_closure_wrapper190"](p0i32,p1i32,p2i32);
+/******/ 					"__wbindgen_closure_wrapper196": function(p0i32,p1i32,p2i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_closure_wrapper196"](p0i32,p1i32,p2i32);
 /******/ 					},
-/******/ 					"__wbindgen_closure_wrapper192": function(p0i32,p1i32,p2i32) {
-/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_closure_wrapper192"](p0i32,p1i32,p2i32);
+/******/ 					"__wbindgen_closure_wrapper198": function(p0i32,p1i32,p2i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_closure_wrapper198"](p0i32,p1i32,p2i32);
 /******/ 					}
 /******/ 				}
 /******/ 			};
@@ -318,7 +327,7 @@
 /******/ 				promises.push(installedWasmModuleData);
 /******/ 			else {
 /******/ 				var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 				var req = fetch(__webpack_require__.p + "" + {"../pkg/mech_wasm_bg.wasm":"a77a18c44510b4459219"}[wasmModuleId] + ".module.wasm");
+/******/ 				var req = fetch(__webpack_require__.p + "" + {"../pkg/mech_wasm_bg.wasm":"6f815973c14a79005636"}[wasmModuleId] + ".module.wasm");
 /******/ 				var promise;
 /******/ 				if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 					promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
