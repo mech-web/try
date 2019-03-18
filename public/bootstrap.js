@@ -202,6 +202,12 @@
 /******/ 					"__widl_f_append_child_Node": function(p0i32,p1i32,p2i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_append_child_Node"](p0i32,p1i32,p2i32);
 /******/ 					},
+/******/ 					"__widl_f_remove_child_Node": function(p0i32,p1i32,p2i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_remove_child_Node"](p0i32,p1i32,p2i32);
+/******/ 					},
+/******/ 					"__widl_f_first_child_Node": function(p0i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_first_child_Node"](p0i32);
+/******/ 					},
 /******/ 					"__widl_f_request_animation_frame_Window": function(p0i32,p1i32,p2i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__widl_f_request_animation_frame_Window"](p0i32,p1i32,p2i32);
 /******/ 					},
@@ -226,11 +232,11 @@
 /******/ 					"__wbindgen_rethrow": function(p0i32) {
 /******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_rethrow"](p0i32);
 /******/ 					},
-/******/ 					"__wbindgen_closure_wrapper196": function(p0i32,p1i32,p2i32) {
-/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_closure_wrapper196"](p0i32,p1i32,p2i32);
+/******/ 					"__wbindgen_closure_wrapper212": function(p0i32,p1i32,p2i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_closure_wrapper212"](p0i32,p1i32,p2i32);
 /******/ 					},
-/******/ 					"__wbindgen_closure_wrapper198": function(p0i32,p1i32,p2i32) {
-/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_closure_wrapper198"](p0i32,p1i32,p2i32);
+/******/ 					"__wbindgen_closure_wrapper214": function(p0i32,p1i32,p2i32) {
+/******/ 						return installedModules["../pkg/mech_wasm.js"].exports["__wbindgen_closure_wrapper214"](p0i32,p1i32,p2i32);
 /******/ 					}
 /******/ 				}
 /******/ 			};
@@ -330,7 +336,7 @@
 /******/ 				promises.push(installedWasmModuleData);
 /******/ 			else {
 /******/ 				var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 				var req = fetch(__webpack_require__.p + "" + {"../pkg/mech_wasm_bg.wasm":"24afddab34f65fa7c97f"}[wasmModuleId] + ".module.wasm");
+/******/ 				var req = fetch(__webpack_require__.p + "" + {"../pkg/mech_wasm_bg.wasm":"2175d9ed6c90e5807a48"}[wasmModuleId] + ".module.wasm");
 /******/ 				var promise;
 /******/ 				if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 					promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
