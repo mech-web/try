@@ -1,22 +1,137 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Try Mech lang</title>
-    <link rel="stylesheet" type="text/css" href="css/editor.css">
-    <link href="http://mech-lang.org/img/favicon.png" rel="icon" type="image/x-icon">
-    <script type="application/javascript">
-      var doNotTrack = false;
-      if (!doNotTrack) {
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-120731667-1', 'auto');
-        
-        ga('send', 'pageview');
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Editor</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: monospace;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    .editor-container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    .pane {
+      flex: 1;
+      padding: 10px;
+      overflow: auto;
+      border: 1px solid #333;
+    }
+    #code-input {
+      width: 100%;
+      height: 100%;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      border: none;
+      outline: none;
+      resize: none;
+      font-family: monospace;
+      font-size: 14px;
+    }
+    #code-output {
+      white-space: pre-wrap;
+      background-color: #1e1e1e;
+      font-size: 14px;
+    }
+    .controls {
+      padding: 10px;
+      background-color: #252526;
+      display: flex;
+      gap: 10px;
+      border-top: 1px solid #333;
+    }
+    button {
+      background-color: #0e639c;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #1177bb;
+    }
+  </style>
+</head>
+<body>
+  <div class="editor-container">
+    <div class="pane">
+      <textarea id="code-input" spellcheck="false" placeholder="Write your code here..."></textarea>
+    </div>
+    <div class="pane" id="code-output"></div>
+  </div>
+  <div class="controls">
+    <button onclick="compileCode()">Compile</button>
+    <button onclick="clearOutput()">Clear</button>
+  </div>
+
+  <script type="module">
+    import init, { WasmMech } from '/pkg/mech_wasm.js';
+  
+    let wasm_core;
+  
+    async function initializeWasm() {
+      await init();
+      wasm_core = new WasmMech();
+      wasm_core.init();
+  
+      loadFromHash(); // Load and run program from URL hash
+    }
+  
+    async function compileCode() {
+      const code = document.getElementById('code-input').value.trim();
+      const output = document.getElementById('code-output');
+      try {
+        wasm_core.clear();
+        wasm_core.run_program(code);
+        const result = wasm_core.out_string();
+        output.textContent += `>: ${code}\n${result}\n\n`;  
+      } catch (err) {
+        output.textContent += `>: ${code}\nError: ${err.message}\n\n`;
       }
-      </script>
-      <script async src='https://www.google-analytics.com/analytics.js'></script>
-  </head>
-  <body>        
-    <script src="/mech0-0-1/bootstrap.js"></script>
-  </body>
+    }
+  
+    function clearOutput() {
+      document.getElementById('code-output').textContent = '';
+    }
+  
+    function loadFromHash() {
+      const hash = window.location.hash;
+      if (hash.length > 1) {
+        try {
+          const code = hash.slice(1);
+          const input = document.getElementById('code-input');
+          input.value = code;
+          compileCode();
+        } catch (err) {
+          console.error('Error decoding hash:', err);
+        }
+      }
+    }
+  
+    document.getElementById('code-input').addEventListener('keydown', function (e) {
+      if (e.ctrlKey && e.key === 'Enter') {
+        e.preventDefault();
+        compileCode();
+      }
+    });
+  
+    initializeWasm();
+    window.compileCode = compileCode;
+    window.clearOutput = clearOutput;
+  </script>
+  
+</body>
 </html>
